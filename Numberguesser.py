@@ -8,14 +8,20 @@ while gNum > 0:
         int(guess)
     else:
         gNum -= 1
-        print('I\'m sorry, that\'s not a valid number... Try again. You have', (gNum), 'attempt(s) left.')
+        if gNum== 1:
+            print('I\'m sorry, that\'s not a valid number... Try again. You have', (gNum), 'attempt left.')
+        else:
+            print('I\'m sorry, that\'s not a valid number... Try again. You have', (gNum), 'attempts left.')
         continue
     if guess == rndm:
         print('Success! You have guessed the number', rndm)
         break
     else:
         gNum -= 1 #If they're incorrect, we add to the gNum
-        print('Sorry. The number', guess, 'is incorrect. You have', (gNum), 'attempt(s) left.')
+        if gNum== 1:
+            print('I\'m sorry, that\'s not a valid number... Try again. You have', (gNum), 'attempt left.')
+        else:
+            print('I\'m sorry, that\'s not a valid number... Try again. You have', (gNum), 'attempts left.')
         continue
 if gNum == 0:
      print('Sorry, you have no more attmempts left...')
